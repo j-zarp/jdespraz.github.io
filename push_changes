@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$#" < 1 ]
+if [ "$#" -le 0 ]
 then
   echo "You have to provide a string as a commit message"
   echo "aborting"
@@ -8,7 +8,7 @@ then
 fi
 
 git add --all
-git commit -m \"$1\"
+git commit -m $1
 git push -u origin master
 
 
